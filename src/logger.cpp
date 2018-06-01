@@ -30,7 +30,7 @@ int main(int argc, char **argv)
     string saveprefix = "/home/dongshin/log";
     if (argc == 4)
         saveprefix = argv[3];
-    int cnt = 0;
+    int cnt = -1;
     string imagefileinfo = "image.txt";
     string imudata = "imu.txt";
 
@@ -80,12 +80,14 @@ int main(int argc, char **argv)
 
         if (lg.m_bluefox2.m_data.size() > 0)
         {
-            cv::imshow("test", lg.m_bluefox2.m_data.front().m_img);
-            cv::waitKey(3);
-            cv::imwrite(imagefilename, lg.m_bluefox2.m_data.front().m_img);
-            imginfo << lg.m_bluefox2.m_data.front().m_timestamp << " " << imagefilename << endl;
-            lg.m_bluefox2.m_data.pop_front();
-            cnt++;
+            if(cnt != -1 && !lg.m_bluefox2.m_data.front().m_img.empty()){
+                cv::imshow("test", lg.m_bluefox2.m_data.front().m_img);
+                cv::waitKey(3);
+                cv::imwrite(imagefilename, lg.m_bluefox2.m_data.front().m_img);
+                imginfo << lg.m_bluefox2.m_data.front().m_timestamp << " " << imagefilename << endl;
+                lg.m_bluefox2.m_data.pop_front();
+                cnt++;
+            }
         }
         if (lg.m_xti.m_data.size() > 0)
         {
