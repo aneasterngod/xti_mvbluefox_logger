@@ -22,6 +22,9 @@ int main(int argc, char **argv)
     }
     else
     {
+        cout << "Argument0: /dev/ttUSB0" << endl;
+        cout << "Argument1: cam SN" << endl;
+        cout << "Argument2: saving directory" << endl;
         lg.init("/dev/ttyUSB0", "26802554");
     }
     string saveprefix = "/home/dongshin/log";
