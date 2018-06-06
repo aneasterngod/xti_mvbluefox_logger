@@ -86,8 +86,8 @@ int main(int argc, char **argv)
                 cv::imwrite(imagefilename, lg.m_bluefox2.m_data.front().m_img);
                 imginfo << lg.m_bluefox2.m_data.front().m_timestamp << " " << imagefilename << endl;
                 lg.m_bluefox2.m_data.pop_front();
-                cnt++;
             }
+            cnt++;
         }
         if (lg.m_xti.m_data.size() > 0)
         {
