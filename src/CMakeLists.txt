@@ -12,11 +12,11 @@ set(CMAKE_PREFIX_PATH 	/home/dongshin/Shares/share/OpenCV
 
 set(xsens_INC_DIR /home/dongshin/Shares/include
     CACHE PATH "the root include directory that contains mvIMPACT header files" )
-set(xsens_LIB_DIR /home/dongshin/Shares/lib64
+set(xsens_LIB_DIR /home/dongshin/Shares/lib
 	CACHE PATH "the root lib directory that contains mvIMPACT libraries" )
-set(mvIMPACT_INC_DIR /home/dongshin/Shares/mvIMPACT
+set(mvIMPACT_INC_DIR /opt/mvIMPACT_Acquire
     CACHE PATH "the root include directory that contains mvIMPACT header files" )
-set(mvIMPACT_LIB_DIR /home/dongshin/Shares/lib
+set(mvIMPACT_LIB_DIR /opt/mvIMPACT_Acquire/lib/x86_64
 	CACHE PATH "the root lib directory that contains mvIMPACT libraries" )
 
 find_package(xti300 REQUIRED)
